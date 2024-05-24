@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xavi - El Tridente</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">El Tridente</h1>
+    </header>
+    <main>
+        <h2>Xavi</h2>
+        <table id="datos-jugador">
+            <thead>
+                <tr>
+                    <th>Jornada</th>
+                    <th>Minutos</th>
+                    <th>Goles</th>
+                    <th>Tarjetas</th>
+                    <th>Titular</th>
+                    <th>Convocado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Datos se insertarán aquí con JavaScript -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Total</th>
+                    <td id="total-minutos">0</td>
+                    <td id="total-goles">0</td>
+                    <td id="total-tarjetas">0</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+    <footer>
+        <button onclick="window.location.href='index.html'">Volver al Home</button>
+    </footer>
+    <script src="data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const datos = jugadores.xavi.datos;
+            const tbody = document.querySelector('#datos-jugador tbody');
+            let totalMinutos = 0, totalGoles = 0, totalTarjetas = 0;
+
+            for (let i = 1; i <= 34; i++) {
+                const dato = datos.find(d => d.jornada === i) || { jornada: i, minutos: 0, goles: 0, tarjetas: 0, titular: false, convocado: false };
+                const fila = document.createElement('tr');
+                fila.innerHTML = `
+                    <td>${dato.jornada}</td>
+                    <td>${dato.minutos}</td>
+                    <td>${dato.goles}</td>
+                    <td>${dato.tarjetas}</td>
+                    <td>${dato.titular ? 'Sí' : 'No'}</td>
+                    <td>${dato.convocado ? 'Sí' : 'No'}</td>
+                `;
+                tbody.appendChild(fila);
+
+                totalMinutos += dato.minutos;
+                totalGoles += dato.goles;
+                totalTarjetas += dato.tarjetas;
+            }
+
+            document.getElementById('total-minutos').textContent = totalMinutos;
+            document.getElementById('total-goles').textContent = totalGoles;
+            document.getElementById('total-tarjetas').textContent = totalTarjetas;
+        });
+    </script>
+</body>
+</html>

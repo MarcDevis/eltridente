@@ -1,0 +1,172 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #efefef; /* Color de fondo suave */
+}
+
+header, footer {
+    width: 100%;
+    background-color: #333; /* Color de fondo para el encabezado y pie de página */
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+#title {
+    cursor: pointer;
+}
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 2em auto;
+    text-align: center;
+}
+
+/* Estilos para los botones */
+button {
+    padding: 0.5em 1em;
+    margin: 1em;
+    cursor: pointer;
+    background-color: #4CAF50; /* Color de fondo para los botones */
+    border: none;
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #6390d8; /* Cambio de color al pasar el mouse sobre los botones */
+}
+
+/* Estilos para las fotos de los jugadores */
+.jugador-img {
+    width: 150px; /* Tamaño ajustado para las fotos de los jugadores */
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #fff; /* Borde blanco para resaltar las fotos */
+    box-shadow: 0 0 10px rgba(0, 102, 255, 0.3); /* Sombra suave alrededor de las fotos */
+}
+
+/* Estilos para la sección de jugadores */
+.jugadores {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin: 1em 0;
+    padding: 1em 0;
+    background-color: #fae9e9; /* Color suave para la sección de jugadores */
+    border-radius: 100px;
+    box-shadow: 0 0 10px rgba(182, 187, 195, 0.3); /* Sombra suave alrededor de la sección de jugadores */
+    text-align: center;
+    transition: background-color 0.3s;
+    
+
+}
+
+.jugador {
+    text-align: center;
+    transition: transform 0.3s;
+    transform: scale(0.95); /* Efecto de escala al pasar el mouse sobre los jugadores */
+    cursor: pointer;
+    border-radius: 100px;
+    
+    /* Estilos para las fotos de los jugadores */
+    img {
+        width: 150px; /* Tamaño ajustado para las fotos de los jugadores */
+        height: auto;
+        border-radius: 50%;
+        border: 3px solid #fff; /* Borde blanco para resaltar las fotos */
+        box-shadow: 0 0 10px rgba(0, 102, 255, 0.3); /* Sombra suave alrededor de las fotos */
+    }
+    
+}
+
+.jugador:hover {
+    transform: scale(1.05); /* Efecto de escala al pasar el mouse sobre los jugadores */
+    
+}
+
+/* Estilos para el contenido principal */
+.comparacion table,
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    padding: 1em 0;
+    background-color: #fae9e9; /* Color suave para la tabla de comparaciones */
+    
+    box-shadow: 0 0 10px rgba(182, 187, 195, 0.3); /* Sombra suave alrededor de la tabla de comparaciones */
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    text-align: center;
+    transition: all 0.3s;
+    border-radius: 4px;
+
+    /* Estilos para las fotos de los jugadores */
+    img {
+        width: 150px; /* Tamaño ajustado para las fotos de los jugadores */
+        height: auto;
+        border-radius: 50%;
+        border: 3px solid #fff; /* Borde blanco para resaltar las fotos */
+        box-shadow: 0 0 10px rgba(0, 102, 255, 0.3); /* Sombra suave alrededor de las fotos */
+    }
+
+}
+
+th {
+    background-color: #4CAF50; /* Color de fondo para las celdas de encabezado */
+    color: white;
+    border-radius: 4px 4px 0 0;
+    font-weight: bold;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 10px rgba(0, 102, 255, 0.3); /* Sombra suave alrededor de las celdas de encabezado */
+
+}
+
+/* Estilos para las filas alternas */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Color suave para las filas pares */
+}
+
+/* Estilos para las filas de cada jugador en la tabla de comparaciones */
+.comparacion tbody .cesar {
+    background-color: #67b1e0; /* Color suave para las filas de César */
+}
+
+.comparacion tbody .xavi {
+    background-color: #6ab757; /* Color suave para las filas de Xavi */
+}
+
+.comparacion tbody .devis {
+    background-color: #E5FFE5; /* Color suave para las filas de Devis */
+}
+
+/* Estilos para las filas de las tablas de jugadores */
+tbody tr:nth-child(odd) {
+    background-color: rgb(165, 189, 241); /* Color suave para las filas impares */
+}
+
+/* Estilos para las tablas en dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    th, td {
+        white-space: nowrap;
+    }
+}

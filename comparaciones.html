@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comparaciones - El Tridente</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="title" onclick="window.location.href='index.html'">El Tridente</h1>
+    </header>
+    <main>
+        <h2>Comparaciones</h2>
+        <div class="comparacion">
+            <h3>Comparación de Jornadas</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Jugador</th>
+                        <th>Jornada</th>
+                        <th>Minutos Jugados</th>
+                        <th>Goles</th>
+                        <th>Tarjetas</th>
+                        <th>Titular</th>
+                        <th>Convocado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Inserta aquí las filas de datos comparativos -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <button onclick="window.location.href='index.html'">Volver al Home</button>
+        <button onclick="window.location.href='estadisticas.html'">Estadísticas</button>
+    </footer>
+    <script src="data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const comparacionTable = document.querySelector('.comparacion table tbody');
+            const jugadoresData = [jugadores.cesar, jugadores.xavi, jugadores.devis];
+
+            jugadoresData.forEach(jugador => {
+                jugador.datos.forEach(dato => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${jugador.nombre}</td>
+                        <td>${dato.jornada}</td>
+                        <td>${dato.minutos}</td>
+                        <td>${dato.goles}</td>
+                        <td>${dato.tarjetas}</td>
+                        <td>${dato.titular ? 'Sí' : 'No'}</td>
+                        <td>${dato.convocado ? 'Sí' : 'No'}</td>
+                    `;
+                    comparacionTable.appendChild(row);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
