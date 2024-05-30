@@ -170,3 +170,26 @@ tbody tr:nth-child(odd) {
         white-space: nowrap;
     }
 }
+
+/* Estilos para las nuevas estadísticas en dispositivos móviles */
+@media only screen and (max-width: 600px) {
+    .stats {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .jugador {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .jugador table {
+        width: 100%;
+    }
+
+    .jugador th, .jugador td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
